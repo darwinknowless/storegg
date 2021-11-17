@@ -1,24 +1,49 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true
-    },
-    "extends": [
-        "plugin:react/recommended",
-        "airbnb"
-    ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 13,
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react",
-        "@typescript-eslint"
-    ],
-    "rules": {
-    }
+	"settings": {
+		"react": {
+			"version": "detect"
+		}
+	},
+	"env": {
+		"browser": true,
+		"es2021": true,
+		"node": true
+	},
+	"extends": ["plugin:react/recommended", "airbnb"],
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": 2018,
+		"sourceType": "module"
+	},
+	"plugins": ["react", "@typescript-eslint"],
+	"rules": {
+		"react/react-in-jsx-scope": "off",
+		"react/self-closing-comp": "off",
+		"react/prop-types": "off",
+		"no-unused-vars": "off",
+		"no-tabs": "off",
+		"indent": "off",
+		"comma-dangle": [2, "never"],
+		"react/jsx-props-no-spreading": "off",
+		"jsx-quotes": "off",
+		"arrow-body-style": "off",
+		"react/jsx-indent": "off",
+		"react/jsx-indent-props": "off",
+		"react/jsx-max-props-per-line": "off",
+		"react/jsx-first-prop-new-line": "off",
+		"react/jsx-one-expression-per-line": "off",
+		"react/jsx-closing-tag-location": "off",
+		"react/jsx-closing-bracket-location": "off",
+		"react/jsx-tag-spacing": "off",
+		"react/no-unknown-property": "off",
+		"react/function-component-definition": "off",
+		"react/jsx-filename-extension": [
+			1,
+			{ "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+		],
+		"jsx-a11y/anchor-is-valid": "off"
+	}
 }
