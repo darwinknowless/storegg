@@ -3,6 +3,11 @@ import '../styles/homepage.css'; // Import style here
 import '../styles/detail.css'; // Import style here
 import '../styles/checkout.css'; // Import style here
 import '../styles/complete-checkout.css'; // Import style here
+import '../styles/sign-in.css'; // Import style here
+import '../styles/sign-up.css'; // Import style here
+import '../styles/sign-up-photo.css'; // Import style here
+import '../styles/sign-up-success.css'; // Import style here
+import '../styles/404-not-found.css'; // Import style here
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 
