@@ -1,5 +1,6 @@
 import '../styles/utilities.css'; // Import style here
 import '../styles/homepage.css'; // Import style here
+import '../styles/detail.css'; // Import style here
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 

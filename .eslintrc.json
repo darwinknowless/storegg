@@ -26,6 +26,7 @@
 		"no-unused-vars": "off",
 		"no-tabs": "off",
 		"indent": "off",
+		"linebreak-style": "off",
 		"comma-dangle": [2, "never"],
 		"react/jsx-props-no-spreading": "off",
 		"jsx-quotes": "off",
