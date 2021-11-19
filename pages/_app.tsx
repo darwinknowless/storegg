@@ -13,6 +13,7 @@ import '../styles/overview.css'; // Import style here
 import '../styles/transactions.css'; // Import style here
 import '../styles/transactions-detail.css'; // Import style here
 import '../styles/edit-profile.css'; // Import style here
+import '../styles/navbar-log-in.css'; // Import style here
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 

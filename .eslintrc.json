@@ -1,15 +1,13 @@
 {
-	"settings": {
-		"react": {
-			"version": "detect"
-		}
-	},
 	"env": {
 		"browser": true,
-		"es2021": true,
-		"node": true
+		"es6": true
 	},
 	"extends": ["plugin:react/recommended", "airbnb"],
+	"globals": {
+		"Atomics": "readonly",
+		"SharedArrayBuffer": "readonly"
+	},
 	"parser": "@typescript-eslint/parser",
 	"parserOptions": {
 		"ecmaFeatures": {
@@ -20,36 +18,47 @@
 	},
 	"plugins": ["react", "@typescript-eslint"],
 	"rules": {
-		"react/react-in-jsx-scope": "off",
-		"react/self-closing-comp": "off",
-		"react/prop-types": "off",
-		"no-unused-vars": "off",
-		"no-tabs": "off",
-		"indent": "off",
-		"linebreak-style": "off",
-		"import/no-unresolved": "off",
-		"import/extensions": "off",
-		"quote-props": ["error", "consistent-as-needed"],
-		"comma-dangle": [2, "only-multiline"],
-		"react/jsx-props-no-spreading": "off",
-		"jsx-quotes": "off",
-		"arrow-body-style": "off",
-		"react/jsx-indent": "off",
-		"react/jsx-indent-props": "off",
-		"react/jsx-max-props-per-line": "off",
-		"react/jsx-first-prop-new-line": "off",
-		"react/jsx-one-expression-per-line": "off",
-		"react/jsx-closing-tag-location": "off",
-		"react/jsx-closing-bracket-location": "off",
-		"react/jsx-tag-spacing": "off",
-		"react/no-unknown-property": "off",
-		"react/function-component-definition": "off",
 		"react/jsx-filename-extension": [
 			1,
 			{ "extensions": [".js", ".jsx", ".ts", ".tsx"] }
 		],
+		"react/react-in-jsx-scope": "off",
 		"jsx-a11y/anchor-is-valid": "off",
+		"react/jsx-props-no-spreading": "off",
+		"no-underscore-dangle": "off",
+		"react/self-closing-comp": "off",
+		"import/no-unresolved": "off",
+		"comma-dangle": [2, "only-multiline"],
+		"react/function-component-definition": "off",
+		"react/jsx-one-expression-per-line": "off",
+		"react/no-unknown-property": "off",
 		"jsx-a11y/label-has-associated-control": "off",
-		"jsx-a11y/no-redundant-roles": "off"
+		"import/extensions": [
+			"error",
+			"ignorePackages",
+			{
+				"js": "never",
+				"jsx": "never",
+				"ts": "never",
+				"tsx": "never"
+			}
+		],
+		"linebreak-style": "off",
+		"react/jsx-indent": "off",
+		"react/jsx-indent-props": "off",
+		"jsx-quotes": "off",
+		"indent": "off",
+		"no-tabs": "off"
+	},
+	"settings": {
+		"import/extensions": [".js", ".jsx", ".ts", ".tsx"],
+		"import/parsers": {
+			"@typescript-eslint/parser": [".ts", ".tsx"]
+		},
+		"import/resolver": {
+			"node": {
+				"extensions": [".js", ".jsx", ".ts", ".tsx"]
+			}
+		}
 	}
 }
