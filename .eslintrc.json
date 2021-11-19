@@ -48,7 +48,8 @@
 		"react/jsx-indent-props": "off",
 		"jsx-quotes": "off",
 		"indent": "off",
-		"no-tabs": "off"
+		"no-tabs": "off",
+		"object-curly-newline": "off"
 	},
 	"settings": {
 		"import/extensions": [".js", ".jsx", ".ts", ".tsx"],
