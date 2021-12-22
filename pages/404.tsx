@@ -243,8 +243,8 @@ export default function Custom404() {
 								y2='177.412'
 								gradientUnits='userSpaceOnUse'
 							>
-								<stop stop-color='#83A6FF' />
-								<stop offset='1' stop-color='#5A78FF' />
+								<stop stopColor='#83A6FF' />
+								<stop offset='1' stopColor='#5A78FF' />
 							</linearGradient>
 							<linearGradient
 								id='paint1_linear'
@@ -254,8 +254,8 @@ export default function Custom404() {
 								y2='25.0788'
 								gradientUnits='userSpaceOnUse'
 							>
-								<stop stop-color='#83A6FF' />
-								<stop offset='1' stop-color='#5A78FF' />
+								<stop stopColor='#83A6FF' />
+								<stop offset='1' stopColor='#5A78FF' />
 							</linearGradient>
 							<linearGradient
 								id='paint2_linear'
@@ -265,12 +265,8 @@ export default function Custom404() {
 								y2='258.937'
 								gradientUnits='userSpaceOnUse'
 							>
-								<stop
-									offset='0.00289017'
-									stop-color='#606673'
-									stop-opacity='0'
-								/>
-								<stop offset='1' stop-color='#373C47' />
+								<stop offset='0.00289017' stopColor='#606673' stopOpacity='0' />
+								<stop offset='1' stopColor='#373C47' />
 							</linearGradient>
 							<linearGradient
 								id='paint3_linear'
@@ -280,12 +276,8 @@ export default function Custom404() {
 								y2='48.4336'
 								gradientUnits='userSpaceOnUse'
 							>
-								<stop
-									offset='0.00289017'
-									stop-color='#606673'
-									stop-opacity='0'
-								/>
-								<stop offset='1' stop-color='#373C47' />
+								<stop offset='0.00289017' stopColor='#606673' stopOpacity='0' />
+								<stop offset='1' stopColor='#373C47' />
 							</linearGradient>
 							<linearGradient
 								id='paint4_linear'
@@ -295,8 +287,8 @@ export default function Custom404() {
 								y2='78.748'
 								gradientUnits='userSpaceOnUse'
 							>
-								<stop stop-color='#FF66A9' />
-								<stop offset='1' stop-color='#F53689' />
+								<stop stopColor='#FF66A9' />
+								<stop offset='1' stopColor='#F53689' />
 							</linearGradient>
 							<linearGradient
 								id='paint5_linear'
@@ -306,12 +298,8 @@ export default function Custom404() {
 								y2='169.644'
 								gradientUnits='userSpaceOnUse'
 							>
-								<stop
-									offset='0.00289017'
-									stop-color='#606673'
-									stop-opacity='0'
-								/>
-								<stop offset='1' stop-color='#373C47' />
+								<stop offset='0.00289017' stopColor='#606673' stopOpacity='0' />
+								<stop offset='1' stopColor='#373C47' />
 							</linearGradient>
 							<linearGradient
 								id='paint6_linear'
@@ -321,12 +309,8 @@ export default function Custom404() {
 								y2='169.644'
 								gradientUnits='userSpaceOnUse'
 							>
-								<stop
-									offset='0.00289017'
-									stop-color='#606673'
-									stop-opacity='0'
-								/>
-								<stop offset='1' stop-color='#373C47' />
+								<stop offset='0.00289017' stopColor='#606673' stopOpacity='0' />
+								<stop offset='1' stopColor='#373C47' />
 							</linearGradient>
 							<linearGradient
 								id='paint7_linear'
@@ -336,12 +320,8 @@ export default function Custom404() {
 								y2='47.7445'
 								gradientUnits='userSpaceOnUse'
 							>
-								<stop
-									offset='0.00289017'
-									stop-color='#3F5073'
-									stop-opacity='0'
-								/>
-								<stop offset='1' stop-color='#283247' />
+								<stop offset='0.00289017' stopColor='#3F5073' stopOpacity='0' />
+								<stop offset='1' stopColor='#283247' />
 							</linearGradient>
 							<clipPath id='clip0'>
 								<rect width='482.759' height='300' fill='white' />
@@ -354,15 +334,15 @@ export default function Custom404() {
 						Oops! Not Found
 					</h2>
 					<p className='text-lg text-center color-palette-1 m-0'>
-						Halaman yang anda kunjungi sudah
+						The page you are visiting
 						<br className='d-sm-block d-none' />
-						tidak tersedia pada sistem kami dan menghubungi
+						is no longer on our system or is under maintenance.
 					</p>
 				</div>
 				<div className='button-group d-flex flex-column mx-auto'>
 					<a
 						className='btn btn-homepage fw-medium text-lg text-white rounded-pill'
-						href='#'
+						href='/#'
 						role='button'
 					>
 						Homepage
