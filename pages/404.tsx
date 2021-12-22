@@ -334,9 +334,9 @@ export default function Custom404() {
 						Oops! Not Found
 					</h2>
 					<p className='text-lg text-center color-palette-1 m-0'>
-						The page you are visiting is no longer available.
+						Halaman yang anda kunjungi sudah
 						<br className='d-sm-block d-none' />
-						Not in our system or is under maintenance.
+						tidak tersedia pada sistem kami dan menghubungi
 					</p>
 				</div>
 				<div className='button-group d-flex flex-column mx-auto'>

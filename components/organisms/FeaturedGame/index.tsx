@@ -1,18 +1,19 @@
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { useCallback, useEffect, useState } from 'react';
 import GameItem from '../../molecules/GameItem';
+import { getFeaturedGame } from '../../../services/player';
 
 export default function FeaturedGame() {
-	// State
-	const [gameList, setGameList] = useState([]);
-	// Call API from BE
-	useEffect(async () => {
-		const response = await axios.get(
-			'https://bwa-storegg-backend.herokuapp.com/api/v1/players/landingpage'
-		);
-		console.log('data: ', response.data);
-		setGameList(response.data.data);
+	const [gameList, setGameList] = useState([]); // State for the list of games
+	// Callback for the getFeaturedGame function
+	const getFeatureGameList = useCallback(async () => {
+		const data = await getFeaturedGame();
+		setGameList(data);
+	}, [getFeaturedGame]); // Dependencies
+	// API call to get the featured game
+	useEffect(() => {
+		getFeatureGameList();
 	}, []);
+
 	return (
 		<section className='featured-game pt-50 pb-50'>
 			<div className='container-fluid'>
