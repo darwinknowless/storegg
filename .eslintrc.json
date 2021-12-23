@@ -27,6 +27,7 @@
 		"react/jsx-props-no-spreading": "off",
 		"no-underscore-dangle": "off",
 		"no-unused-vars": "off",
+		"no-console": "off",
 		"react/self-closing-comp": "off",
 		"import/no-unresolved": "off",
 		"arrow-body-style": "off",
