@@ -1,4 +1,4 @@
-export interface categoryTypes {
+export interface CategoryTypes {
 	_id: string;
 	name: string;
 	__v: number;
@@ -9,5 +9,5 @@ export interface GameItemTypes {
 	status: string;
 	name: string;
 	thumbnail: string;
-	category: categoryTypes;
+	category: CategoryTypes;
 }
