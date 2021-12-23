@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import GameItem from '../../molecules/GameItem';
 import { getFeaturedGame } from '../../../services/player';
+import { GameItemTypes } from '../../../services/data-types'; // Interface for the game item
 
 export default function FeaturedGame() {
 	const [gameList, setGameList] = useState([]); // State for the list of games
@@ -13,6 +14,8 @@ export default function FeaturedGame() {
 	useEffect(() => {
 		getFeatureGameList();
 	}, []);
+	// API image URL
+	const API_IMG = process.env.NEXT_PUBLIC_IMG;
 
 	return (
 		<section className='featured-game pt-50 pb-50'>
@@ -25,13 +28,13 @@ export default function FeaturedGame() {
 					className='d-flex flex-row flex-lg-wrap overflow-setting justify-content-lg-between gap-lg-3 gap-4'
 					data-aos='fade-up'
 				>
-					{gameList.map((item) => {
+					{gameList.map((item: GameItemTypes) => {
 						return (
 							<GameItem
 								key={item._id}
 								title={item.name}
 								category={item.category.name}
-								thumbnail={`https://bwa-storegg-backend.herokuapp.com/uploads/${item.thumbnail}`}
+								thumbnail={`${API_IMG}/${item.thumbnail}`}
 							/>
 						);
 					})}
