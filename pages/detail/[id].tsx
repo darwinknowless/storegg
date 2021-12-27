@@ -18,19 +18,22 @@ export default function Detail() {
 		},
 	});
 
+	const [nominals, setNominals] = useState([]);
+	const [payments, setPayments] = useState([]);
+
 	const getVoucherDetailAPI = useCallback(async (id) => {
 		const data = await getDetailVoucher(id);
 		console.log('data: ', data);
 		// setDataItem(data.detail); // Error: data.detail is undefined
-		setDataItem(data); // Error: Get url: https://bwa-storegg-backend.herokuapp.com/uploads/
+		setDataItem(data.detail);
+		setNominals(data.detail.nominals);
+		setPayments(data.payment);
 	}, []);
 
 	useEffect(() => {
 		if (isReady) {
-			console.log('router sudah tersedia', query.id);
+			// console.log('router sudah tersedia', query.id);
 			getVoucherDetailAPI(query.id);
-		} else {
-			console.log('router belum tersedia');
 		}
 	}, [isReady]);
 
@@ -55,7 +58,7 @@ export default function Detail() {
 							{/* --- Desktop: Game title --- */}
 							<TopUpItem data={dataItem} type='desktop' />
 							<hr />
-							<TopUpForm />
+							<TopUpForm nominals={nominals} payments={payments} />
 						</div>
 					</div>
 				</div>
