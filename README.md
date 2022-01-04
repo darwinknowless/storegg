@@ -1,4 +1,16 @@
+# GG Store
+
+A complex project in the form of a website top up game "STORE GG". From the FE side, among others, change the HTML template design that we have slicing into NextJS. To manage large-scale data easily, library components will be organized according to atomic design principles.
+
+On the BE side, the main NodeJS framework is used for routing, middleware, database integration to testing. CRUD (Create, Read, Update, Delete) will also be used to organize database content as needed.
+
+Api integration is implemented on both sides to allow data access on the same server.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Authors
+
+- [@Darwin](https://www.gitlab.com/darwinknowless)
 
 ## Getting Started
 
