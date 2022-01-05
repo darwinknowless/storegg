@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from 'next/router';
+import Cookies from 'js-cookie';
 import { setLogin } from '../../../services/auth';
 
 export default function SigninForm() {
@@ -16,14 +17,18 @@ export default function SigninForm() {
 			password,
 		};
 		if (!email || !password) {
-			toast.error('Email dan Password wajib diisi!!!');
+			toast.error('Email and Password must be filled!!!');
 		} else {
 			const response = await setLogin(data);
 			if (response.error) {
 				toast.error(response.message);
 			} else {
-				toast.success('Login Berhasil');
-				router.push('/');
+				toast.success('Login Success');
+				const { token } = response.data;
+				const tokenBase64 = Buffer.from(token).toString('base64');
+				Cookies.set('token', tokenBase64, { expires: 1 });
+
+				// router.push('/');
 			}
 		}
 	};
