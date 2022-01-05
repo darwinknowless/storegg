@@ -50,7 +50,7 @@ export default function SignUpPhoto() {
 		data.append('favorite', favorite);
 
 		const result = await setSignup(data);
-		if (result?.error === 1) {
+		if (result.error) {
 			toast.error(result.message);
 		} else {
 			toast.success('Register Success');
