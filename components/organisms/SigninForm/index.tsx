@@ -27,7 +27,6 @@ export default function SigninForm() {
 				const { token } = response.data;
 				const tokenBase64 = Buffer.from(token).toString('base64');
 				Cookies.set('token', tokenBase64, { expires: 1 });
-
 				// router.push('/');
 			}
 		}
