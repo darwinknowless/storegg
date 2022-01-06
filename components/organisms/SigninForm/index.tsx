@@ -25,9 +25,9 @@ export default function SigninForm() {
 			} else {
 				toast.success('Login Success');
 				const { token } = response.data;
-				const tokenBase64 = Buffer.from(token).toString('base64');
+				const tokenBase64 = btoa(token);
 				Cookies.set('token', tokenBase64, { expires: 1 });
-				// router.push('/');
+				router.push('/');
 			}
 		}
 	};
