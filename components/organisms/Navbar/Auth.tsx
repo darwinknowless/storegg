@@ -57,14 +57,13 @@ export default function Auth() {
 							alt=''
 						/>
 					</a>
-
 					<ul
 						className='dropdown-menu border-0'
 						aria-labelledby='dropdownMenuLink'
 					>
 						<li>
 							<Link href='/member'>
-								<a className='dropdown-item text-lg color-palette-2' href='#'>
+								<a className='dropdown-item text-lg color-palette-2'>
 									My Profile
 								</a>
 							</Link>
