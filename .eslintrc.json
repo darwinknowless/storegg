@@ -52,6 +52,8 @@
 		"jsx-quotes": "off",
 		"indent": "off",
 		"no-tabs": "off",
+		"no-alert": "off",
+		"operator-linebreak": "off",
 		"object-curly-newline": "off",
 		"jsx-a11y/no-redundant-roles": "off",
 		"jsx-a11y/click-events-have-key-events": "off",

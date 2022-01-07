@@ -1,5 +1,12 @@
 import { useState } from 'react';
-import { NominalsTypes, PaymentTypes } from '../../../services/data-types';
+import { useRouter } from 'next/router';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import {
+	BanksTypes,
+	NominalsTypes,
+	PaymentTypes,
+} from '../../../services/data-types';
 import NominalItem from './NominalItem';
 import PaymentItem from './PaymentItem';
 
@@ -10,12 +17,45 @@ interface TopUpFormProps {
 
 export default function TopUpForm(props: TopUpFormProps) {
 	const [verifyID, setVerifyID] = useState('');
+	const [bankAccountName, setBankAccountName] = useState('');
+	const [nominalItem, setNominalItem] = useState({});
+	const [paymentItem, setPaymentItem] = useState({});
+
 	const { nominals, payments } = props;
+	const router = useRouter();
 
 	const onNominalItemChange = (data: NominalsTypes) => {
-		console.log('data: ', data);
-		localStorage.setItem('nominal_item', JSON.stringify(data));
+		setNominalItem(data);
 	};
+
+	const onPaymentItemChange = (payment: PaymentTypes, bank: BanksTypes) => {
+		const data = {
+			payment,
+			bank,
+		};
+		setPaymentItem(data);
+	};
+
+	const onSubmit = () => {
+		if (
+			verifyID === '' ||
+			bankAccountName === '' ||
+			nominalItem === {} ||
+			paymentItem === {}
+		) {
+			toast.warn('Silahkan isi semua data!!!');
+		} else {
+			const data = {
+				verifyID,
+				bankAccountName,
+				nominalItem,
+				paymentItem,
+			};
+			localStorage.setItem('data-topup', JSON.stringify(data));
+			router.push('/checkout');
+		}
+	};
+
 	return (
 		<form action='./checkout.html' method='POST'>
 			<div className='pt-md-50 pt-30'>
@@ -70,6 +110,7 @@ export default function TopUpForm(props: TopUpFormProps) {
 									bankID={bank._id}
 									type={payment.type}
 									name={bank.bankName}
+									onChange={() => onPaymentItemChange(payment, bank)}
 								/>
 							));
 						})}
@@ -91,17 +132,20 @@ export default function TopUpForm(props: TopUpFormProps) {
 					name='bankAccount'
 					aria-describedby='bankAccount'
 					placeholder='Enter your Bank Account Name'
+					value={bankAccountName}
+					onChange={(event) => setBankAccountName(event.target.value)}
 				/>
 			</div>
 			<div className='d-sm-block d-flex flex-column w-100'>
-				<a
-					href='/checkout'
-					type='submit'
+				<button
+					type='button'
 					className='btn btn-submit rounded-pill fw-medium text-white border-0 text-lg'
+					onClick={onSubmit}
 				>
 					Continue
-				</a>
+				</button>
 			</div>
+			<ToastContainer />
 		</form>
 	);
 }
