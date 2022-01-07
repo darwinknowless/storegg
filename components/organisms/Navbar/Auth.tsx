@@ -22,10 +22,11 @@ export default function Auth() {
 			const jwtToken = atob(token);
 			const payload: JWTPayloadTypes = jwtDecode(jwtToken);
 			const userFromPayload: UserTypes = payload.player;
-			const IMG = process.env.NEXT_PUBLIC_IMG;
-			user.avatar = `${IMG}/${userFromPayload.avatar}`;
+			// const IMG = process.env.NEXT_PUBLIC_IMG;
+			// user.avatar = `${IMG}/${userFromPayload.avatar}`;
 			setIsLogin(true);
-			setUser(user);
+			// setUser(user);
+			setUser(userFromPayload);
 		}
 	}, []);
 
