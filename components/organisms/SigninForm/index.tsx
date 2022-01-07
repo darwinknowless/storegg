@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 import { useRouter } from 'next/router';
 import Cookies from 'js-cookie';
 import { setLogin } from '../../../services/auth';
@@ -23,7 +22,7 @@ export default function SigninForm() {
 			if (response.error) {
 				toast.error(response.message);
 			} else {
-				toast.success('Login Success');
+				toast.success('Login Berhasil');
 				const { token } = response.data;
 				const tokenBase64 = btoa(token);
 				Cookies.set('token', tokenBase64, { expires: 1 });
@@ -76,7 +75,6 @@ export default function SigninForm() {
 					</a>
 				</Link>
 			</div>
-			<ToastContainer />
 		</>
 	);
 }

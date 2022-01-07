@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 import {
 	BanksTypes,
 	NominalsTypes,
@@ -145,7 +144,6 @@ export default function TopUpForm(props: TopUpFormProps) {
 					Continue
 				</button>
 			</div>
-			<ToastContainer />
 		</form>
 	);
 }
