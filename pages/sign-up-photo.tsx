@@ -18,7 +18,6 @@ export default function SignUpPhoto() {
 
 	const getGameCategoryAPI = useCallback(async () => {
 		const data = await getGameCategory();
-
 		setCategories(data);
 		setFavorite(data[0]._id);
 	}, [getGameCategory]);
@@ -123,7 +122,6 @@ export default function SignUpPhoto() {
 								</select>
 							</div>
 						</div>
-
 						<div className='button-group d-flex flex-column mx-auto'>
 							<button
 								type='button'
