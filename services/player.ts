@@ -31,7 +31,7 @@ export async function getGameCategory() {
 
 	return axiosResponse.data;
 }
-// API : Checkout
+
 export async function setCheckout(data: CheckoutTypes) {
 	const url = `${ROOT_API}/${API_VERSION}/players/checkout`; // API endpoint URL
 
