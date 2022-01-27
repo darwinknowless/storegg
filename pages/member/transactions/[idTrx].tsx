@@ -12,7 +12,6 @@ interface TransactionDetailProps {
 }
 
 export default function TransactionDetail(props: TransactionDetailProps) {
-	// console.log('detail: ', transactionDetail);
 	const { transactionDetail } = props;
 	return (
 		<section className='transactions-detail overflow-auto'>
@@ -33,7 +32,6 @@ interface GetServerSideProps {
 }
 
 export async function getServerSideProps({ req, params }: GetServerSideProps) {
-	// console.log('params: ', params);
 	const { idTrx } = params;
 	const { token } = req.cookies;
 
@@ -52,7 +50,6 @@ export async function getServerSideProps({ req, params }: GetServerSideProps) {
 	const IMG = process.env.NEXT_PUBLIC_IMG;
 	userFromPayload.avatar = `${IMG}/${userFromPayload.avatar}`;
 	const response = await getTransactionDetail(idTrx, jwtToken);
-	// console.log('data: ', response);
 
 	return {
 		props: {

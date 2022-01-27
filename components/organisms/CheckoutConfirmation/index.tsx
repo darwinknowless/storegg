@@ -1,7 +1,6 @@
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
-import Cookies from 'js-cookie';
-import { useRouter } from 'next/router';
 import { setCheckout } from '../../../services/player';
 
 export default function CheckoutConfirmation() {
@@ -35,7 +34,6 @@ export default function CheckoutConfirmation() {
 			toast.success('Checkout Berhasil');
 			router.push('/complete-checkout');
 		}
-		console.log('response: ', response);
 	};
 
 	return (

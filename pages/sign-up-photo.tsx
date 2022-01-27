@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { useCallback, useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import { setSignup } from '../services/auth';
+import { CategoryTypes } from '../services/data-types';
 import { getGameCategory } from '../services/player';
 
 export default function SignUpPhoto() {
@@ -114,7 +115,7 @@ export default function SignUpPhoto() {
 									value={favorite}
 									onChange={(event) => setFavorite(event.target.value)}
 								>
-									{categories.map((category) => (
+									{categories.map((category: CategoryTypes) => (
 										<option key={category._id} value={category._id} selected>
 											{category.name}
 										</option>

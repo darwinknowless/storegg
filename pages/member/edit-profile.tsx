@@ -8,15 +8,21 @@ import Input from '../../components/atoms/Input';
 import { JWTPayloadTypes, UserTypes } from '../../services/data-types';
 import { updateProfile } from '../../services/member';
 
-// Edit Profile Member Page
+interface UserStateTypes {
+	id: string;
+	name: string;
+	email: string;
+	avatar: any;
+}
+
 export default function EditProfile() {
-	const [user, setUser] = useState({
+	const [user, setUser] = useState<UserStateTypes>({
 		id: '',
 		name: '',
 		email: '',
 		avatar: '',
 	});
-	const [imagePreview, setImagePreview] = useState(null);
+	const [imagePreview, setImagePreview] = useState('/');
 	const router = useRouter();
 
 	useEffect(() => {
@@ -30,7 +36,6 @@ export default function EditProfile() {
 	}, []);
 
 	const onSubmit = async () => {
-		console.log('user: ', user);
 		const data = new FormData();
 
 		data.append('name', user.name);
@@ -39,7 +44,6 @@ export default function EditProfile() {
 		if (response.error) {
 			toast.error(response.message);
 		} else {
-			console.log('data: ', response);
 			toast.success('Update profile success');
 			Cookies.remove('token');
 			router.push('/sign-in');
@@ -57,9 +61,9 @@ export default function EditProfile() {
 							<div className='photo d-flex'>
 								<div className='image-upload'>
 									<label htmlFor='avatar'>
-										{imagePreview ? (
+										{imagePreview === '/' ? (
 											<img
-												src={imagePreview}
+												src={user.avatar}
 												width={90}
 												height={90}
 												style={{ borderRadius: '100%' }}
@@ -67,7 +71,7 @@ export default function EditProfile() {
 											/>
 										) : (
 											<img
-												src={user.avatar}
+												src={imagePreview}
 												width={90}
 												height={90}
 												style={{ borderRadius: '100%' }}
@@ -92,7 +96,7 @@ export default function EditProfile() {
 								<Input
 									label='Full Name'
 									value={user.name}
-									onChannge={(event) =>
+									onChange={(event) =>
 										setUser({
 											...user,
 											name: event.target.value,

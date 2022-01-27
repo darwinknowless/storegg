@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Menu from './Menu';
+import Menu from './menu';
 import Auth from './Auth';
 import ToggleMenu from './ToggleMenu';
 

@@ -60,7 +60,8 @@
 		"jsx-a11y/no-redundant-roles": "off",
 		"jsx-a11y/click-events-have-key-events": "off",
 		"jsx-a11y/no-noninteractive-element-interactions": "off",
-		"import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
+		"import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+		"jsx-ally/no-static-element-interactions": "off"
 	},
 	"settings": {
 		"import/extensions": [".js", ".jsx", ".ts", ".tsx"],
